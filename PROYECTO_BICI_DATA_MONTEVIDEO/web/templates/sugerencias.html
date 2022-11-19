@@ -1,0 +1,94 @@
+<!----> <!--[] {...}-->
+<html>
+<head>
+    <title>Bici_Data_Montevideo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/css/sugerencia.css" rel="stylesheet" media="screen">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+<!--01_titulo --> <!--[X]{...}-->
+<div id="formTop" class="box2">
+    <h1>Cartelera de sugerencias</h1>
+</div>
+
+<!--02_ Post_planilla_sugerencia --> <!--[X]{...}-->
+<div>
+    <!-- sugerencias Form -->
+    <form action="sugerencia" method="post" name="registrarSugerencia" autocomplete="off"
+          onsubmit="return validarSugerencia(this)">
+
+        <input type="date"
+               id="sug_fecha"
+               class="ocultar"
+               name="sug_fecha"
+               placeholder=""
+               value="{{request.form.sug_fecha }}">
+
+        <input type="text"
+               id="sug_texto"
+               class="fadeIn third"
+               name="sug_texto"
+               placeholder="texto de la sugerencia"
+               value="{{request.form.sug_texto }}">
+        <input type="text"
+               id="sug_link"
+               class="fadeIn third"
+               name="sug_link"
+               placeholder="link de la sugerencia"
+               value="{{request.form.sug_link }}">
+        <input type="submit" class="fadeIn fourth" value="Subir sugerencia">
+    </form>
+</div>
+
+<!--02,3_error jinja2--> <!--[ ] { No se como funciona bien, tiene relacion con jinja2}-->
+
+{% if error %}
+<p><strong>Error:</strong> {{ error }}</p>
+{% endif %}
+
+<button id="btnToggle4" class="btnToggle" >Mostrar tabla de sugerencias: ... </button>
+<div id="tabla" class="ocultar">
+
+<input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Escribe la fecha para filtrar en la tabla...">
+
+<div class="tbl-content" onsubmit="return (this)">
+
+    <table class="table table-bordered order-table ">
+      <thead>
+          <tr>
+      {% for header in headings %}
+      <th>{{header}}</th>
+      {%endfor%}
+  </tr>
+      </thead>
+    {% for data in data %}
+    <tr>
+        <td>{{data._}}</td>
+        <td>{{data.__}}</td>
+        <td><a href="{{data.___}}">{{data.___}}</a></td>
+    </tr>
+    {%endfor%}
+</table>
+</div>
+
+</div>
+
+<!--04_Enlace_inicio --> <!--[X]{...}-->
+<div id="formFooter" class="box2">
+    <a href="{{ url_for('inicio') }}">Regresar</a>
+    <p>Sembrando 2021</p>
+</div>
+</div>
+<!--05_botones_alerta_js_frases_ciclista_uno--> <!--[X] {...}-->
+<!--
+<div class="btn-group">
+    <script src="static/js/sugerencias.js"></script>
+    <button  class="button" onclick="mostrarFraseUno()" >"Saber que..."</button>
+    <button  class="button" onclick="mostrarFraseDos()" >"Recuerda ..."</button>
+</div>
+-->
+
+<script src="static/js/sugerencias.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/*01_color del fondo de la pagina*/
+html {
+    background-color: #29bac2;
+}
+/*02_diseño del texto-caja de la pagina*/
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    width: 500px;
+    padding: 15px;
+    border: 50px solid blue;
+    margin:auto;
+    background-color:#91edde;
+    font-family:sans-serif;
+}
+/*03_Estilo del Hipervículo */
+#inicio_hip {
+  background-color: #bbfcfa;
+  border-top: 1px solid blue;
+  padding: 25px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+/*04_diseño del titulo de top y foot*/
+ .box2{
+margin:20px;
+ background-color: #f6f6f6;
+  border-top: 5px solid #1f76b8;
+  border-bottom: 5px solid #1f76b8;
+  border-right:5px solid #1f76b8;
+  border-left:5px solid #1f76b8;
+  padding: 15px;
+  text-align: center;
+  font-family: sans-serif;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  }
+
+/*05_foto*/
+.foto{
+background-color: #f6f6f6;
+  border-top: 5px solid #1f76b8;
+  border-bottom: 5px solid #1f76b8;
+  border-right:5px solid #1f76b8;
+  border-left:5px solid #1f76b8;
+margin:15px;
+}
+
+/*06_ocultar*/
+.ocultar{
+display:none;
+}
+
+/*07_mostrar*/
+.mostrar{
+display: block;
+margin:5px;
+overflow:hidden;
+max-height:0 px;
+transition:max-height 0.2s;
+padding:15px;
+font-family:sans-serif;
+background:#eeeeee;
+}
+
+/*08_Estilo de boton */
+.btnToggle{
+margin:5px;
+display:block;
+width:200px;
+padding:15px;
+border:none;
+outline:none;
+cursor:pointer;
+background:#333333;
+color:white;
+text-align:left;
+transition:background 0.2s;
+}
+.btnToggle::after{
+content:'\25be' ;
+float:right;
+}

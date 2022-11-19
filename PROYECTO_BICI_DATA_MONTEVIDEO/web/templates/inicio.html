@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bici_Data_Montevideo</title>
+    <link href="static/css/inicio.css" rel="stylesheet" media="screen">
+    <script src="static/js/inicio.js"></script>
+</head>
+<body>
+
+<!--01_caja_de_encabezado--> <!--[X] {...}-->
+<div class="box2">
+    <h1>Inicio</h1>
+    <p>De que se trata este sitio:</p>
+</div>
+<!--02_caja_de_texto--> <!--[X] {...}-->
+<div class="box">
+
+     <div>
+    <button id="btnToggle1" class="btnToggle" >Objetivo: ... </button>
+    <p id="texto1" class="ocultar">
+        ...<b>C</b>on estas capturas de sumatorias de datos es generar un aporte positivo a la hora que el departamento de
+        proyectos y obras de MTOP desarrollen las futuras obras que vinculan al ciudadano que se transporta en
+        bicicleta. Cuando el proyecto que tratan procede a la utilizaciòn de “Design Thinking”, luego de empatizar,
+        pasarán a la fase de visualizaciòn, cuando estén investigando, puede que les sirva como aporte los datos
+        captados por la aplicación “Bici_Data_Montevideo”, para luego generar una fructífera etapa de ideación.
+    </p>
+    </div>
+
+        <div>
+    <button id="btnToggle2" class="btnToggle" >Misión: ... </button>
+    <p id="texto2" class="ocultar">
+        ...<b>Q</b>ue los usuarios puedan sentir que dejan un aporte al lugar donde viven y se transportan.
+    </p>
+    </div>
+
+    <div>
+    <button id="btnToggle3" class="btnToggle">Visión: ... </button>
+    <p id="texto3" class="ocultar">
+        ...<b>Q</b>ue la capital de Montevideo sea un lugar que valore y beneficie a las personas que se mueven en Bici,
+        siendo un ejemplo para el mundo.
+    </p>
+    </div>
+
+         <div class="foto">
+        <img src="static/img/logo.png" height="200" width="200" />
+         </div>
+</div>
+
+<!--02_plantilla_jinja2_obtener_usuarios--> <!--[X]{permite mostrar en una plantilla todos los usuarios-llamar del servidor web la api obtener_usuarios}-->
+<div>
+    {% for usuario in usuarios %}
+    <p> {{ usuario }} </p>
+    {% endfor %}
+</div>
+
+
+<!--(Pie de página)-->
+
+<!--03_enlace_sugerencia--> <!--[X] {...}-->
+<div class="box2">
+    <a href="{{ url_for('mostrar_sugerencia_') }}">Sugerencias</a>
+</div>
+
+<!--04_enlace_login--> <!--[X] {...}-->
+<div class="box2">
+    <a href="{{ url_for('login') }}">Regresar</a>
+    <p>Sembrando 2021</p>
+</div>
+
+
+<script src="static/js/inicio.js"></script>
+
+</body>
+</html>

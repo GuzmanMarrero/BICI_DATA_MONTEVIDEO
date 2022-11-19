@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Bici_Data_Montevideo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/css/login.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<!--01_titulo e imagen --> <!--[X]{...}-->
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <h1>¡Bienvenidos!</h1>
+        <div class="foto"">
+            <img src="static/img/logo.png" height="300" width="300"/>
+        </div>
+
+        <!-- Login Form -->
+        <form action="login" method="post" autocomplete="off" onsubmit="return validarLogin(this)">
+            <input type="text"
+                   id="usu_nombre"
+                   class="fadeIn second"
+                   name="usu_nombre"
+                   placeholder="usuario"
+                   value="{{request.form.usu_nombre }}">
+            <input type="text"
+                   id="usu_contra"
+                   class="fadeIn third"
+                   name="usu_contra"
+                   placeholder="contraseña"
+                   value="{{request.form.usu_contra }}">
+            <input type="submit" class="fadeIn fourth" value="Entrar">
+<!--03_error_jinja2--> <!--[ ]{no se como funciona bien}-->
+        {% if error %}
+        <p><strong>Error:</strong> {{ error }}</p>
+        {% endif %}
+        </form>
+
+<!--04_enlace registro--><!--[X]{...}-->
+        <div id="formFooter">
+            <a href="{{ url_for('registro_usuario') }}">Registrarse</a>
+            <p>Sembrando 2021</p>
+        </div>
+</div>
+
+
+<script src="static/js/login.js"></script>
+
+</body>
+</html>

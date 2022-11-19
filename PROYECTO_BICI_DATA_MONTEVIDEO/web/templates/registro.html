@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Bici_Data_Montevideo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/css/login.css" rel="stylesheet" media="screen">
+    <link href="static/css/registro.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <h1>Registro de usuarios</h1>
+        <div class="foto">
+            <img src="static/img/logo.png" height="200" width="200"/>
+        </div>
+        <script src="static/js/registro.js"></script>
+        <form action="registro" method="post" autocomplete="off" onsubmit="return validarRegistro(this)">
+            <input type="date"
+                   id="usu_fecha"
+                   class="ocultar"
+                   name="usu_fecha"
+                   placeholder=""
+                   value="{{request.form.usu_fecha }}">
+            <input type="text"
+                   id="usu_correo"
+                   class="fadeIn second"
+                   name="usu_correo"
+                   placeholder="Correo"
+                   value="{{request.form.usu_correo }}">
+            <input type="text"
+                   id="usu_nombre"
+                   class="fadeIn second"
+                   name="usu_nombre"
+                   placeholder="Nombre"
+                   value="{{request.form.usu_nombre }}">
+            <input type="text"
+                   id="usu_contra"
+                   class="fadeIn third"
+                   name="usu_contra"
+                   placeholder="Contraseña"
+                   value="{{request.form.usu_contra }}">
+            <input type="submit" class="fadeIn fourth" value="Registrarse">
+        </form>
+        {% if error %}
+        <p><strong>Error:</strong> {{ error }}</p>
+        {% endif %}
+
+        <div id="inicio_hip">
+            <a href="{{ url_for('login') }}">Regresar</a>
+            <p>Sembrando 2021</p>
+        </div>
+
+
+    </div>
+</div>
+
+<script src="static/js/registro.js"></script>
+
+</body>
+</html>
